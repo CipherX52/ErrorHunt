@@ -36,6 +36,7 @@ const app = new express;
 app.set('views','./src/views'); 
 app.set('view engine','ejs'); 
 
+app.use(cors());//added this line
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
@@ -58,7 +59,7 @@ app.get('/',function(req,res){
 
 
 
-//changed the port to listen to from '5000' to '3000'
+//changed the port to listen to, from '5000' to '3000'
 app.listen(3000,()=>{
     console.log("Server Ready on 3000");
 });

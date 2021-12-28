@@ -79,7 +79,7 @@ booksRouter.delete('/delete', function (req, res) {
 
 
 //router to edit book
-booksRouter.post('/edit', function (req, res) {
+booksRouter.patch('/edit', function (req, res) {
 
     bookdata.findById(req.body.id, function(err, data){
         if (err) {
@@ -94,7 +94,7 @@ booksRouter.post('/edit', function (req, res) {
 
 
 //router to update book
-booksRouter.post('/update', function (req, res) {
+booksRouter.put('/update', function (req, res) {
 
     bookdata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
         if (err) {
