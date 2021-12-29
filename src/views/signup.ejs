@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pustakam</title>
 
-    <script src="../../public/js/signup.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
     <script src="https://kit.fontawesome.com/859e7ab76e.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
@@ -70,8 +67,8 @@
             <div class="card-body px-lg-5 pt-0">
         
                 <!-- Form -->
-                <form class="text-center" action="/signup/adduser" style="color: #757575;" onsubmit="return validate();">
-        
+                <!-- added a method attribute with value "post" to the form -->
+                <form class="text-center" action="/signup/adduser" onsubmit="return validate();" method="post" style="color: #757575;">
                     <div class="form-row">
                         <div class="col">
                             <!-- First name -->
@@ -98,11 +95,7 @@
                         <input id="uid" name="uid" type="email" id="email" class="form-control" required>
                         <label for="email" id="emailfeedback" style="color:red; visibility:hidden">Enter valid e-mail id.</label>
 
-                    </div>
-        
-
-        
-
+                    </div>    
         
                     <!-- Password -->
                     <div class="md-form mt-0">
@@ -147,7 +140,9 @@
             
     </footer>
     <!-- Footer End-->
-  
 
+    <script src="js/signup.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 </html>

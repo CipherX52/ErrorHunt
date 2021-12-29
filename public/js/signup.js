@@ -10,7 +10,9 @@ var mailfb=document.getElementById("emailfeedback");
 var pw=document.getElementById("pwd");
 var pwfb=document.getElementById("pwdfeedback");
 
-function validate(event){
+// document.querySelector('form').addEventListener('submit',validate);
+
+function validate(){
 
     var myFname=fName.value;
     var myLname=lName.value;
@@ -28,28 +30,28 @@ if(regFname.test(myFname)){
 
     fnamefb.innerHTML="Valid First Name";
     fnamefb.style.color="green";
-    fnamefb.style.visibility-"visible";
+    fnamefb.style.visibility="visible";
 
     // if lname valid
     if(regLname.test(myLname)){
 
         lnamefb.innerHTML="Valid Last Name";
         lnamefb.style.color="green";
-        lnamefb.style.visibility-"visible";
+        lnamefb.style.visibility="visible";
 
         // if mail valid
         if(regMail.test(myMail)){
 
             mailfb.innerHTML="Valid E-mail Id.";
             mailfb.style.color="green";
-            mailfb.style.visibility-"visible";
+            mailfb.style.visibility="visible";
 
             // if pwd valid
             if(myPwd.trim().length>=8){
 
                 pwfb.innerHTML="Valid Password";
                 pwfb.style.color="green";
-                pwfb.style.visibility-"visible";
+                pwfb.style.visibility="visible";
                 return true;
 
             }
@@ -57,7 +59,6 @@ if(regFname.test(myFname)){
             // if pwd invalid
             else{
                 pwfb.style.visibility="visible";
-                
                 return false;
 
             }
@@ -87,6 +88,4 @@ else{
     return false;
 
 }
-
-
 }

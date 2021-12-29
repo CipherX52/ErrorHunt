@@ -42,7 +42,7 @@ booksRouter.post('/add', function (req, res) {
         const book = new bookdata(item);
         book.save();
         res.redirect('/books');
-
+        res.send("post");
     })
 
 
@@ -55,7 +55,7 @@ booksRouter.get('/:id',function(req,res){
                 res.render('book', {
                     book
                 })
-
+                res.send("get");
             })
     
 });
@@ -64,6 +64,7 @@ booksRouter.get('/:id',function(req,res){
 
 
 //router to delete book
+//changed the method from 'POST' to 'DELETE'
 booksRouter.delete('/delete', function (req, res) {
 
     const id = req.body.id;  
@@ -72,21 +73,22 @@ booksRouter.delete('/delete', function (req, res) {
         .then(function () {
 
             res.redirect('/books')
-
+            res.send("delete");
         })  
 })
 
 
 
 //router to edit book
-booksRouter.patch('/edit', function (req, res) {
+booksRouter.post('/edit', function (req, res) {
 
     bookdata.findById(req.body.id, function(err, data){
         if (err) {
             throw err;
         }
         else {
-            res.render('editbook', {data})
+            res.render('editbook', {data});
+            res.send("edit");
         }
     })
 })
@@ -94,6 +96,7 @@ booksRouter.patch('/edit', function (req, res) {
 
 
 //router to update book
+//changed method from 'POST' to 'PUT'
 booksRouter.put('/update', function (req, res) {
 
     bookdata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
@@ -105,6 +108,7 @@ booksRouter.put('/update', function (req, res) {
         }
         else {
             res.redirect("/books");
+            res.send("put");
         }
 
     }) 

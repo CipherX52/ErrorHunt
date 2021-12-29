@@ -11,8 +11,9 @@ loginRouter.get('/',function(req,res){
 
 loginRouter.get("/check",function(req,res){
     var checkuser = {
-        uid:req.param("uid"),
-        pwd:req.param("pwd")
+        //changed the deprecated method 'req.params("uid")' (and "pwd") to 'req.body.uid' (and 'pwd')
+        uid:req.body.uid,
+        pwd:req.body.pwd
     };
     
     console.log(checkuser);
@@ -23,7 +24,6 @@ loginRouter.get("/check",function(req,res){
         
         if(checkuser.uid==user[i].uid && checkuser.pwd==user[i].pwd)
         {
-            
             flag=true;
             break;
         }
