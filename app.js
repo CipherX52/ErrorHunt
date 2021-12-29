@@ -60,6 +60,6 @@ app.get('/',function(req,res){
 
 
 //changed the port to listen to, from '5000' to '3000'
-app.listen(3000,()=>{
-    console.log("Server Ready on 3000");
+app.listen(process.env.PORT || 3000,()=>{
+    console.log("Server Ready");
 });
