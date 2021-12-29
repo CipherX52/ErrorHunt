@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/Library');
+mongoose.connect('mongodb://localhost:27017/Library',
+        { useNewUrlParser: true },
+        { useMongoClient: true }
+        );
 const Schema = mongoose.Schema;
 
 
