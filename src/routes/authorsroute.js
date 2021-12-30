@@ -34,14 +34,14 @@ authorsRouter.post('/add', function (req, res) {
 
     var item={
         title:req.body.title,
-        image:req.body.images,
+        //changed 'image:req.body.images' to 'image:req.body.image'
+        image:req.body.image,
         about:req.body.about
     }
     console.log(item)  ;
     const author = new authordata(item);
     author.save();
     res.redirect('/authors');
-
 })
 
 

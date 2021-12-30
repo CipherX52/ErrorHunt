@@ -36,7 +36,7 @@ loginRouter.get("/check",function(req,res){
 
 if(flag==true){
     // alert("User Verified.Click to continue");
-    res.redirect("/home")
+    res.redirect("/home");
 }
 else{
     // alert("User Verification Failed");

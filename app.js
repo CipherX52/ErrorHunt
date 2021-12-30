@@ -57,9 +57,8 @@ app.get('/',function(req,res){
 });
 
 
-
-
 //changed the port to listen to, from '5000' to '3000'
+//added another runtime environment port to listen to, for use while hosting on heroku
 app.listen(process.env.PORT || 3000,()=>{
     console.log("Server Ready");
 });
