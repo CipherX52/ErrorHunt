@@ -38,12 +38,11 @@ booksRouter.post('/add', function (req, res) {
             image:req.body.image,
             about:req.body.about
         }
-        console.log(item)  ;
+        console.log(item);
         const book = new bookdata(item);
         book.save();
         res.redirect('/books');
-        res.send("post");
-    })
+    });
 
 
 
@@ -55,26 +54,23 @@ booksRouter.get('/:id',function(req,res){
                 res.render('book', {
                     book
                 })
-                res.send("get");
             })
-    
+    // console.log("got book");
 });
-
 
 
 
 //router to delete book
 //changed the method from 'POST' to 'DELETE'
-booksRouter.delete('/delete', function (req, res) {
+booksRouter.post('/delete', function (req, res) {
 
     const id = req.body.id;  
 
     bookdata.findOneAndDelete({ _id: id })
         .then(function () {
-
             res.redirect('/books')
-            res.send("delete");
-        })  
+        })
+        // console.log("deleted");
 })
 
 
@@ -88,16 +84,15 @@ booksRouter.post('/edit', function (req, res) {
         }
         else {
             res.render('editbook', {data});
-            res.send("edit");
         }
     })
+    // console.log("editing");
 })
 
 
 
 //router to update book
-//changed method from 'POST' to 'PUT'
-booksRouter.put('/update', function (req, res) {
+booksRouter.post('/update', function (req, res) {
 
     bookdata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
         if (err) {
@@ -108,16 +103,9 @@ booksRouter.put('/update', function (req, res) {
         }
         else {
             res.redirect("/books");
-            res.send("put");
         }
-
-    }) 
+    })
+    // console.log("update success!");
 })
-
-
-
-
-
-
 
 module.exports = booksRouter;

@@ -8,8 +8,8 @@ loginRouter.get('/',function(req,res){
     
 })
 
-
-loginRouter.get("/check",function(req,res){
+//changed method from "GET" to "POST"
+loginRouter.post("/check",function(req,res){
     var checkuser = {
         //changed the deprecated method 'req.params("uid")' (and "pwd") to 'req.body.uid' (and 'pwd')
         uid:req.body.uid,
