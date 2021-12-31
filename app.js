@@ -1,3 +1,5 @@
+//changed line 5 of package.json from '"main":"server.js"' to '"main":"app.js"'
+
 const express = require('express'); 
 const path = require ('path'); 
 const cors = require('cors');
@@ -57,8 +59,10 @@ app.get('/',function(req,res){
 });
 
 
-//changed the port to listen to, from '5000' to '3000'
+const PORT  = process.env.PORT || 3000;
+
+//changed the port to listen to, from '5000' to '3000' (not required, for convenience)
 //added another runtime environment port to listen to, for use while hosting on heroku
-app.listen(process.env.PORT || 3000,()=>{
-    console.log("Server Ready");
+app.listen(PORT,()=>{
+    console.log(`Server Ready on ${PORT}`);
 });
