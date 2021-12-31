@@ -25,7 +25,6 @@ signupRouter.post("/adduser",function(req,res){
     user.push(newuser);
     console.log(user);
     res.redirect("/login");
-    // res.send(`uid is ${newuser.uid} and pwd is ${newuser.pwd}`);
 })
 
 module.exports = signupRouter;

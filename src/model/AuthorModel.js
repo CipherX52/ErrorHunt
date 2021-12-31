@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 var uri = process.env.MONGODB_URI;
 if(!uri){
     uri = 'mongodb://localhost:27017/Library';
+    //for connecting locally
 }
 mongoose.connect(uri);
 

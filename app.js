@@ -59,10 +59,10 @@ app.get('/',function(req,res){
 });
 
 
-const PORT  = process.env.PORT || 3000;
-
 //changed the port to listen to, from '5000' to '3000' (not required, for convenience)
 //added another runtime environment port to listen to, for use while hosting on heroku
+const PORT  = process.env.PORT || 3000;
+
 app.listen(PORT,()=>{
     console.log(`Server Ready on ${PORT}`);
 });
