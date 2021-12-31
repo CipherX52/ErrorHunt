@@ -42,14 +42,13 @@ app.use(cors());//added this line
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname , '/public'))); 
+app.use(express.static(path.join(__dirname , 'public'))); 
 
 app.use('/login',loginRouter); 
 app.use('/signup',signupRouter); 
 app.use('/home',homeRouter); 
 app.use('/books',booksRouter); 
 app.use('/authors',authorsRouter); 
-
 
 
 app.get('/',function(req,res){
