@@ -64,8 +64,8 @@
               <img src='images/face.png'>
             </div>
             <br>
-
-            <form class='col-12' action="/login/check" onsubmit="return validate()" method="post">
+            <!-- added a 'novalidate' attribute to the form tag to disable default html5 validation -->
+            <form class='col-12' action="/login/check" method="post" onsubmit="return validate();" novalidate>
 
               <div class="form-group">
                 <input id="uid" name="uid" class='form-control' type="email" placeholder="Enter Username(email id)" id="mail" required>
@@ -112,8 +112,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
               
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <script src="js/login.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
 
     <!-- <script>
       $("#login").click(function(e){

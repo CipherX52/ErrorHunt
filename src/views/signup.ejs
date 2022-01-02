@@ -14,6 +14,7 @@
     <link rel='stylesheet' href='css/signup.css'>
 
 </head>
+
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
@@ -55,10 +56,7 @@
     
 
     <!-- Material form register -->
-    <div class="card mx-auto container">
-
-
-        
+    <div class="card mx-auto container">        
             <h3 class="card-header info-color white-text text-center py-4">
                 <strong>Sign Up</strong>
             </h3><br>
@@ -68,7 +66,8 @@
         
                 <!-- Form -->
                 <!-- added a method attribute with value "post" to the form -->
-                <form class="text-center" action="/signup/adduser" onsubmit="return validate();" method="post" style="color: #757575;">
+                <!-- added a 'novalidate' attribute to the form tag to disable default html5 validation -->
+                <form class="text-center" action="/signup/adduser" onsubmit="return validate();" method="post" style="color: #757575;" novalidate>
                     <div class="form-row">
                         <div class="col">
                             <!-- First name -->
@@ -127,7 +126,6 @@
 
     <br>
 
-
     <!-- Footer -->
     <footer class="page-footer font-small blue fixed-bottom">
 
@@ -141,8 +139,8 @@
     </footer>
     <!-- Footer End-->
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/js/signup.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-</body>
+  </body>
 </html>

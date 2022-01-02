@@ -1,10 +1,23 @@
-var mail=document.getElementById("mail");
+//changed "mail" to "uid" in the following line
+var mail=document.getElementById("uid");
 var fb=document.getElementById("feedback");
 
 var pw=document.getElementById("pwd");
 var fb2=document.getElementById("feedback2");
 
+
+//added the reset function to validate and show feedback again, if the form is being resubmitted
+function reset(){
+    fb.innerHTML="Enter valid e-mail id";
+    fb.style.color="red";
+    fb.style.visibility="hidden";
+    fb2.innerHTML="Password should be minimum 8 characters";
+    fb2.style.color="red";
+    fb2.style.visibility="hidden";
+}
+
 function validate(){
+    reset();
 
     var myMail=mail.value;
     var myPwd=pw.value;
