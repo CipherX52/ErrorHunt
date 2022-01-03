@@ -13,7 +13,7 @@ signupRouter.get('/',function(req,res){
 signupRouter.post("/adduser",function(req,res){
     
     //changed how data is extracted from the request object
-    //was using the deprecated 'params' method before, now using 'req.body.uid' (and 'pwd') to extract data from the request object
+    //was using the deprecated 'param' method before, now using 'req.body.uid' (and 'pwd') to extract data from the request object
     //added an 'id' for newuser so as to maintain consistency
 
     var newuser = {

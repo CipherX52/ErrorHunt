@@ -61,7 +61,6 @@ booksRouter.get('/:id',function(req,res){
 
 
 //router to delete book
-//changed the method from 'POST' to 'DELETE'
 booksRouter.post('/delete', function (req, res) {
 
     const id = req.body.id;  
